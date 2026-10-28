@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="85" height="30" viewBox="0 0 85 30" role="img" aria-label="Nginx">
+<svg xmlns="http://www.w3.org/2000/svg" width="91" height="30" viewBox="0 0 91 30" role="img" aria-label="Nginx">
 <title>Nginx</title>
-<rect x="0.5" y="0.5" width="84" height="29" rx="14.5" fill="#161B22" stroke="#30363D"/>
-<circle cx="18.5" cy="15.0" r="4.5" fill="#9DA7B3"/>
-<text x="32" y="19.7" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13" fill="#E6EDF3" textLength="39.0" lengthAdjust="spacingAndGlyphs">Nginx</text>
+<rect x="0.5" y="0.5" width="90" height="29" rx="14.5" fill="#161B22" stroke="#30363D"/>
+<svg x="13" y="7.0" width="16" height="16" viewBox="0 0 24 24" fill="#22D3EE"><path d="M12 0L1.605 6v12L12 24l10.395-6V6L12 0zm6 16.59c0 .705-.646 1.29-1.529 1.29-.631 0-1.351-.255-1.801-.81l-6-7.141v6.66c0 .721-.57 1.29-1.274 1.29H7.32c-.721 0-1.29-.6-1.29-1.29V7.41c0-.705.63-1.29 1.5-1.29.646 0 1.38.255 1.83.81l5.97 7.141V7.41c0-.721.6-1.29 1.29-1.29h.075c.72 0 1.29.6 1.29 1.29v9.18H18z"/></svg>
+<text x="38" y="19.7" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13" fill="#E6EDF3" textLength="39.0" lengthAdjust="spacingAndGlyphs">Nginx</text>
 </svg>

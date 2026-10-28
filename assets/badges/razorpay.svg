@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="108" height="30" viewBox="0 0 108 30" role="img" aria-label="Razorpay">
+<svg xmlns="http://www.w3.org/2000/svg" width="114" height="30" viewBox="0 0 114 30" role="img" aria-label="Razorpay">
 <title>Razorpay</title>
-<rect x="0.5" y="0.5" width="107" height="29" rx="14.5" fill="#161B22" stroke="#30363D"/>
-<circle cx="18.5" cy="15.0" r="4.5" fill="#9DA7B3"/>
-<text x="32" y="19.7" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13" fill="#E6EDF3" textLength="62.4" lengthAdjust="spacingAndGlyphs">Razorpay</text>
+<rect x="0.5" y="0.5" width="113" height="29" rx="14.5" fill="#161B22" stroke="#30363D"/>
+<svg x="13" y="7.0" width="16" height="16" viewBox="0 0 24 24" fill="#22D3EE"><path d="M22.436 0l-11.91 7.773-1.174 4.276 6.625-4.297L11.65 24h4.391l6.395-24zM14.26 10.098L3.389 17.166 1.564 24h9.008l3.688-13.902Z"/></svg>
+<text x="38" y="19.7" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13" fill="#E6EDF3" textLength="62.4" lengthAdjust="spacingAndGlyphs">Razorpay</text>
 </svg>

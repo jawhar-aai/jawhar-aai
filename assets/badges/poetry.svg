@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="93" height="30" viewBox="0 0 93 30" role="img" aria-label="Poetry">
+<svg xmlns="http://www.w3.org/2000/svg" width="99" height="30" viewBox="0 0 99 30" role="img" aria-label="Poetry">
 <title>Poetry</title>
-<rect x="0.5" y="0.5" width="92" height="29" rx="14.5" fill="#161B22" stroke="#30363D"/>
-<circle cx="18.5" cy="15.0" r="4.5" fill="#9DA7B3"/>
-<text x="32" y="19.7" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13" fill="#E6EDF3" textLength="46.8" lengthAdjust="spacingAndGlyphs">Poetry</text>
+<rect x="0.5" y="0.5" width="98" height="29" rx="14.5" fill="#161B22" stroke="#30363D"/>
+<svg x="13" y="7.0" width="16" height="16" viewBox="0 0 24 24" fill="#22D3EE"><path d="M21.604 0a19.144 19.144 0 0 1-5.268 13.213L2.396 0l13.583 13.583a19.149 19.149 0 0 1-13.583 5.624V0h19.208Zm-1.911 17.297A24.455 24.455 0 0 1 7.189 24l-4.053-4.053a19.91 19.91 0 0 0 13.37-5.838l3.187 3.188Z"/></svg>
+<text x="38" y="19.7" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13" fill="#E6EDF3" textLength="46.8" lengthAdjust="spacingAndGlyphs">Poetry</text>
 </svg>

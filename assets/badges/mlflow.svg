@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="93" height="30" viewBox="0 0 93 30" role="img" aria-label="MLflow">
+<svg xmlns="http://www.w3.org/2000/svg" width="99" height="30" viewBox="0 0 99 30" role="img" aria-label="MLflow">
 <title>MLflow</title>
-<rect x="0.5" y="0.5" width="92" height="29" rx="14.5" fill="#161B22" stroke="#30363D"/>
-<circle cx="18.5" cy="15.0" r="4.5" fill="#22D3EE"/>
-<text x="32" y="19.7" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13" fill="#E6EDF3" textLength="46.8" lengthAdjust="spacingAndGlyphs">MLflow</text>
+<rect x="0.5" y="0.5" width="98" height="29" rx="14.5" fill="#161B22" stroke="#30363D"/>
+<svg x="13" y="7.0" width="16" height="16" viewBox="0 0 24 24" fill="#22D3EE"><path d="M11.883.002a12.044 12.044 0 0 0-9.326 19.463l3.668-2.694A7.573 7.573 0 0 1 12.043 4.45v2.867l6.908-5.14A12.012 12.012 0 0 0 11.883.002zm9.562 4.533L17.777 7.23a7.573 7.573 0 0 1-5.818 12.322v-2.867l-6.908 5.14a12.046 12.046 0 0 0 16.394-17.29z"/></svg>
+<text x="38" y="19.7" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13" fill="#E6EDF3" textLength="46.8" lengthAdjust="spacingAndGlyphs">MLflow</text>
 </svg>

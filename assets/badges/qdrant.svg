@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="93" height="30" viewBox="0 0 93 30" role="img" aria-label="Qdrant">
+<svg xmlns="http://www.w3.org/2000/svg" width="99" height="30" viewBox="0 0 99 30" role="img" aria-label="Qdrant">
 <title>Qdrant</title>
-<rect x="0.5" y="0.5" width="92" height="29" rx="14.5" fill="#161B22" stroke="#30363D"/>
-<circle cx="18.5" cy="15.0" r="4.5" fill="#9DA7B3"/>
-<text x="32" y="19.7" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13" fill="#E6EDF3" textLength="46.8" lengthAdjust="spacingAndGlyphs">Qdrant</text>
+<rect x="0.5" y="0.5" width="98" height="29" rx="14.5" fill="#161B22" stroke="#30363D"/>
+<svg x="13" y="7.0" width="16" height="16" viewBox="0 0 24 24" fill="#22D3EE"><path d="m12 16.5 3.897-2.25v-4.5L12 7.5 8.103 9.75v4.5zM1.607 18 12 24l3.897-2.25v-4.5L12 19.5l-6.495-3.75v-7.5L12 4.5l6.495 3.75v15L22.393 21V6L12 0 1.607 6Z"/></svg>
+<text x="38" y="19.7" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13" fill="#E6EDF3" textLength="46.8" lengthAdjust="spacingAndGlyphs">Qdrant</text>
 </svg>

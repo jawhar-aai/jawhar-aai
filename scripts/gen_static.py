@@ -4,6 +4,7 @@
 Run from the repository root:  python3 scripts/gen_static.py
 Outputs are committed; this script is not part of the daily workflow.
 """
+import json
 import os
 from xml.sax.saxutils import escape
 
@@ -198,15 +199,64 @@ def chip(x, y, label, accent, size=12, height=24):
     return g, width
 
 
+# Line glyphs (24x24, stroked) for items without a brand logo.
+GLYPHS = {
+    "SQL": '<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/>',
+    "Alembic": '<path d="M12 17V3"/><path d="M6 9l6-6 6 6"/><path d="M5 21h14"/>',
+    "ApexCharts": '<path d="M5 20V11"/><path d="M12 20V4"/><path d="M19 20v-7"/>',
+    "Yup": '<circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16.5 9.5"/>',
+    "OAuth 2.0": '<circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3"/><path d="M16.5 6.5l3 3"/><path d="M14 9l2 2"/>',
+    "bcrypt": '<path d="M10 3L8 21"/><path d="M16 3l-2 18"/><path d="M4.5 9h16"/><path d="M3.5 15h16"/>',
+    "TOTP 2FA": '<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7.5a4 4 0 0 1 8 0V11"/>',
+    "Structured logging": '<path d="M4 6h16"/><path d="M4 12h10"/><path d="M4 18h13"/>',
+    "Flowbite": '<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/>',
+}
+# Filled glyphs (24x24).
+FILLED_GLYPHS = {
+    "OpenAI": '<path d="M12 2.5l2.4 7.1 7.1 2.4-7.1 2.4L12 21.5l-2.4-7.1L2.5 12l7.1-2.4z"/>',
+}
+
+_ICONS = None
+
+
+def load_icons():
+    global _ICONS
+    if _ICONS is None:
+        path = os.path.join(ROOT, "scripts", "icons.json")
+        with open(path, encoding="utf-8") as fh:
+            _ICONS = json.load(fh)
+    return _ICONS
+
+
+def icon_svg(label, x, y, size, color):
+    """Return markup for a logo or glyph in a size x size box, or None."""
+    if label in FILLED_GLYPHS:
+        inner = FILLED_GLYPHS[label]
+        return f'<svg x="{x}" y="{y}" width="{size}" height="{size}" viewBox="0 0 24 24" fill="{color}">{inner}</svg>'
+    if label in GLYPHS:
+        inner = GLYPHS[label]
+        return (f'<svg x="{x}" y="{y}" width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" stroke="{color}" '
+                f'stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{inner}</svg>')
+    icon = load_icons().get(label)
+    if not icon:
+        return None
+    paths = "".join(f'<path d="{escape(d)}"/>' for d in icon["paths"])
+    return f'<svg x="{x}" y="{y}" width="{size}" height="{size}" viewBox="{icon["viewBox"]}" fill="{color}">{paths}</svg>'
+
+
 def badge(slug, label, accent):
-    size, height = 13, 30
+    size, height, isz = 13, 30, 16
     tw = mono_width(label, size)
-    width = 14 + 9 + 9 + tw + 14
+    icon = icon_svg(label, 13, (height - isz) / 2, isz, accent)
+    if icon is None:
+        icon = f'<circle cx="{13 + isz / 2}" cy="{height / 2}" r="4.5" fill="{accent}"/>'
+    text_x = 13 + isz + 9
+    width = text_x + tw + 14
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width:.0f}" height="{height}" viewBox="0 0 {width:.0f} {height}" role="img" aria-label="{escape(label)}">
 <title>{escape(label)}</title>
 <rect x="0.5" y="0.5" width="{width - 1:.0f}" height="{height - 1}" rx="{(height - 1) / 2}" fill="{PANEL}" stroke="{BORDER}"/>
-<circle cx="{14 + 4.5}" cy="{height / 2}" r="4.5" fill="{accent}"/>
-<text x="{14 + 9 + 9}" y="{height / 2 + size * 0.36:.1f}" font-family="{MONO}" font-size="{size}" fill="{TEXT}" textLength="{tw:.1f}" lengthAdjust="spacingAndGlyphs">{escape(label)}</text>
+{icon}
+<text x="{text_x}" y="{height / 2 + size * 0.36:.1f}" font-family="{MONO}" font-size="{size}" fill="{TEXT}" textLength="{tw:.1f}" lengthAdjust="spacingAndGlyphs">{escape(label)}</text>
 </svg>
 '''
     write(f"badges/{slug}.svg", svg)
@@ -270,11 +320,11 @@ BADGE_GROUPS = {
     "data": (VIOLET, ["PostgreSQL", "SQL Server", "MongoDB", "Redis", "Kafka"]),
     "ai": (CYAN, ["OpenAI", "Azure OpenAI", "MLflow", "Pandas", "NumPy"]),
     "cloud": (VIOLET, ["Kubernetes", "Docker", "Helm", "Argo CD", "Azure", "Azure DevOps", "AWS S3"]),
-    "secondary": (MUTED, ["SQLAlchemy", "Alembic", "RabbitMQ", "Qdrant", "Azure AI Search", "Socket.IO", "Firebase", "Nginx", "Git", "Poetry"]),
-    "ui": (MUTED, ["Flowbite", "Bootstrap", "Lucide", "ApexCharts", "Formik", "Yup"]),
-    "auth": (MUTED, ["JWT", "OAuth 2.0", "Keycloak", "bcrypt", "TOTP 2FA", "Azure AD"]),
-    "observability": (MUTED, ["OpenTelemetry", "Prometheus", "Structured logging", "Pytest", "Jest"]),
-    "payments": (MUTED, ["Stripe", "Razorpay"]),
+    "secondary": (CYAN, ["SQLAlchemy", "Alembic", "RabbitMQ", "Qdrant", "Azure AI Search", "Socket.IO", "Firebase", "Nginx", "Git", "Poetry"]),
+    "ui": (VIOLET, ["Flowbite", "Bootstrap", "Lucide", "ApexCharts", "Formik", "Yup"]),
+    "auth": (CYAN, ["JWT", "OAuth 2.0", "Keycloak", "bcrypt", "TOTP 2FA", "Azure AD"]),
+    "observability": (VIOLET, ["OpenTelemetry", "Prometheus", "Structured logging", "Pytest", "Jest"]),
+    "payments": (CYAN, ["Stripe", "Razorpay"]),
     "links": (CYAN, ["LinkedIn", "LeetCode"]),
 }
 
