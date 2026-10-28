@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "23 2 * * *" # daily, 02:23 UTC
   workflow_dispatch:
+  push:
+    paths:
+      - scripts/activity.py
+      - tests/test_activity.py
+      - .github/workflows/activity.yml
 
 permissions:
   contents: write
