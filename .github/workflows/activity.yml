@@ -1,0 +1,61 @@
+name: Refresh activity cards
+
+on:
+  schedule:
+    - cron: "23 2 * * *" # daily, 02:23 UTC
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/activity.py
+      - tests/test_activity.py
+      - .github/workflows/activity.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-activity
+  cancel-in-progress: false
+
+env:
+  # The profile owner; the cards show this account's public contribution calendar.
+  PROFILE_USER: ${{ github.repository_owner }}
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Test streak calculations
+        run: python3 -I tests/test_activity.py
+
+      - name: Generate contribution and streak cards
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 -I scripts/activity.py --user "$PROFILE_USER" --out assets/generated
+
+      - name: Generate contribution snake
+        uses: Platane/snk@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3.5.0
+        with:
+          github_user_name: ${{ env.PROFILE_USER }}
+          outputs: |
+            dist/snake-dark.svg?color_snake=#22D3EE&color_dots=#161B22,#3B2F6B,#5B4BA8,#8B7BE0,#A78BFA
+            dist/snake-light.svg?color_snake=#0891B2&color_dots=#EBEDF0,#DDD6FE,#C4B5FD,#A78BFA,#7C3AED
+
+      - name: Publish generated files
+        run: |
+          set -euo pipefail
+          test -s dist/snake-dark.svg && test -s dist/snake-light.svg
+          cp dist/snake-dark.svg dist/snake-light.svg assets/generated/
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/generated
+          if git diff --cached --quiet; then
+            echo "No changes to publish."
+          else
+            git commit -m "chore: refresh activity cards"
+            git push
+          fi

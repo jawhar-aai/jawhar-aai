@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="280" viewBox="0 0 1000 280" role="img" aria-labelledby="t d">
+<title id="t">Muhammadali Jawhar</title>
+<desc id="d">Full-stack Engineer, Backend, AI Integrations, Cloud</desc>
+<defs>
+<linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#22D3EE"/><stop offset="100%" stop-color="#A78BFA"/></linearGradient>
+<pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#9DA7B3" fill-opacity="0.18"/></pattern>
+<clipPath id="clip"><rect width="1000" height="280" rx="18"/></clipPath>
+</defs>
+<g clip-path="url(#clip)">
+<rect width="1000" height="280" fill="#0D1117"/>
+<rect x="600" width="400" height="280" fill="url(#dots)"/>
+<circle cx="900" cy="140" r="190" fill="#A78BFA" fill-opacity="0.06"/>
+<circle cx="700" cy="40" r="120" fill="#22D3EE" fill-opacity="0.05"/>
+<line x1="700" y1="70" x2="849.4" y2="129.0" stroke="url(#g)" stroke-opacity="0.35" stroke-width="1.5"/><line x1="952" y1="58" x2="849.4" y2="129.0" stroke="url(#g)" stroke-opacity="0.35" stroke-width="1.5"/><line x1="930" y1="232" x2="849.4" y2="129.0" stroke="url(#g)" stroke-opacity="0.35" stroke-width="1.5"/><line x1="705" y1="222" x2="849.4" y2="129.0" stroke="url(#g)" stroke-opacity="0.35" stroke-width="1.5"/><line x1="760" y1="150" x2="849.4" y2="129.0" stroke="url(#g)" stroke-opacity="0.35" stroke-width="1.5"/>
+<polygon points="849.4,95.0 849.4,129.0 820.0,146.0 790.6,129.0 790.6,95.0 820.0,78.0" fill="#161B22" stroke="#22D3EE" stroke-width="2"/><polygon points="833.3,104.3 833.3,119.7 820.0,127.3 806.7,119.7 806.7,104.3 820.0,96.7" fill="none" stroke="#22D3EE" stroke-opacity="0.45" stroke-width="1.5"/><polygon points="908.3,95.0 908.3,129.0 878.9,146.0 849.4,129.0 849.4,95.0 878.9,78.0" fill="#161B22" stroke="#A78BFA" stroke-width="2"/><polygon points="892.1,104.3 892.1,119.7 878.9,127.3 865.6,119.7 865.6,104.3 878.9,96.7" fill="none" stroke="#A78BFA" stroke-opacity="0.45" stroke-width="1.5"/><polygon points="878.9,146.0 878.9,180.0 849.4,197.0 820.0,180.0 820.0,146.0 849.4,129.0" fill="#161B22" stroke="#22D3EE" stroke-width="2"/><polygon points="862.7,155.3 862.7,170.7 849.4,178.3 836.2,170.7 836.2,155.3 849.4,147.7" fill="none" stroke="#22D3EE" stroke-opacity="0.45" stroke-width="1.5"/>
+<circle cx="700" cy="70" r="5" fill="#22D3EE"><animate attributeName="r" values="5;7.5;5" dur="3.0s" repeatCount="indefinite"/></circle><circle cx="952" cy="58" r="6" fill="#A78BFA"><animate attributeName="r" values="6;8.5;6" dur="3.7s" repeatCount="indefinite"/></circle><circle cx="930" cy="232" r="5" fill="#22D3EE"><animate attributeName="r" values="5;7.5;5" dur="4.4s" repeatCount="indefinite"/></circle><circle cx="705" cy="222" r="6" fill="#A78BFA"><animate attributeName="r" values="6;8.5;6" dur="5.1s" repeatCount="indefinite"/></circle><circle cx="760" cy="150" r="4" fill="#22D3EE"><animate attributeName="r" values="4;6.5;4" dur="5.8s" repeatCount="indefinite"/></circle>
+<rect width="1000" height="4" fill="url(#g)"/>
+</g>
+<rect x="0.5" y="0.5" width="999" height="279" rx="18" fill="none" stroke="#30363D"/>
+<text x="60" y="88" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="18" fill="#22D3EE">~/jawhar <tspan fill="#9DA7B3">$ whoami</tspan></text>
+<text x="60" y="152" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="52" font-weight="700" fill="#E6EDF3">Muhammadali Jawhar</text>
+<rect x="60" y="172" width="140" height="4" rx="2" fill="url(#g)"/>
+<text x="60" y="218" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="21" fill="#9DA7B3">Full-stack Engineer<tspan fill="#A78BFA"> · </tspan>Backend<tspan fill="#A78BFA"> · </tspan>AI Integrations<tspan fill="#A78BFA"> · </tspan>Cloud</text>
+</svg>
